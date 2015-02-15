@@ -6,7 +6,7 @@ const BOOT_TIME = new Date().getTime();
 
 var FPS = 2;
 var lastTime = BOOT_TIME;
-var SERVER_IP    = "192.168.100.104";
+var SERVER_IP    = location.hostname;
 var SERVER_PORT  = 3000;
 var API_BASE_URL  = "http://"+SERVER_IP+":"+SERVER_PORT+"/api/";
 
@@ -188,7 +188,7 @@ winkButton.addEventListener("click", function(event) {
 function eyeController(event) {
   console.log(event);
   var state = event.target.dataset.state;
-  sendRequest(API_BASE_URL+"face/eye/?state="+state);
+  sendRequest(API_BASE_URL+"face/eye?state="+state);
 }
 var eyeNormalButton = document.getElementById("eye-normal-button");
 var eyeClosedButton = document.getElementById("eye-closed-button");
