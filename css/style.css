@@ -15,6 +15,6 @@ body {
 #face.normal {
     background: url(../img/normal.png);
 }
-#face.sad {
-    background: url(../img/sad.png);
+#face.close {
+    background: url(../img/close.png);
 }
