@@ -27,8 +27,10 @@
             this._httpServer.get('/api/tail/swing/start', handler);
             this._httpServer.get('/api/tail/swing/end', handler);
             break;
-        case 'faceRequested':
+        case 'faceStateRequested':
             this._httpServer.get('/api/face/eye', handler);
+            break;
+        case 'faceWinkRequested':
             this._httpServer.get('/api/face/eye/wink', handler);
             break;
         }
