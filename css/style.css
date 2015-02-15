@@ -1,0 +1,20 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background: url(../img/base.png);
+}
+
+#face {
+    height: 100%;
+    /* background: rgba(255,0,0,.4); */
+}
+
+#face.normal {
+    background: url(../img/normal.png);
+}
+#face.sad {
+    background: url(../img/sad.png);
+}

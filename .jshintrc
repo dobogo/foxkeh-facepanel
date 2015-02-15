@@ -1,0 +1,26 @@
+{
+    "curly": true,
+    "eqeqeq": true,
+    "immed": true,
+    "latedef": true,
+    "newcap": true,
+    "noarg": true,
+    "noempty": false,
+    "nonew": true,
+    "plusplus": false,
+    "quotmark": "single",
+    "regexp": false,
+    "undef": true,
+    "unused": false,
+    "strict": true,
+    "trailing": true,
+    "debug": true,
+    "loopfunc": true,
+    "onecase": true,
+    "browser": true,
+    "devel": true,
+    "moz": true,
+    "predef": [
+        "HttpServer"
+    ]
+}

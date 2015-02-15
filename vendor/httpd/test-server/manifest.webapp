@@ -1,0 +1,20 @@
+{
+  "name": "Test HTTP Server",
+  "description": "Test HTTP Server",
+  "type": "privileged",
+  "launch_path": "/index.html",
+  "developer": {
+    "name": "KDDI R&D",
+    "url": "http://www.kddilabs.jp"
+  },
+  "permissions": {
+    "tcp-socket": {},
+    "device-storage:sdcard": {
+      "access": "readwrite"
+    }
+  },
+  "icons": {
+    "128": "/icon.png"
+  },
+  "orientation": "default"
+}
