@@ -22,6 +22,7 @@
             xhr.open('GET', MBED_URL + path, true);
             xhr.send();
             res.setHeader('Access-Control-Allow-Origin', '*');
+            res.write('ok');
             oncomplete();
         });
 
