@@ -3,11 +3,18 @@
 
     console.log('start main.js');
 
+    var Mbed = global.Mbed;
     var Server = global.Server;
     var Face = global.Face;
 
     const MBED_URL = 'http://192.168.100.44';
     const PORT = 3000;
+
+    function initializeMbed() {
+        var mbed = new Mbed();
+        global.mbed = mbed;
+        mbed.setUrl(MBED_URL);
+    }
 
     function initializeServer() {
         var server = new Server();
@@ -17,10 +24,7 @@
 
         // set mbed related things
         server.addEventListener('mbedRequested', function (req, res, oncomplete) {
-            var path = req.path + '?' + req.queryString;
-            var xhr = new XMLHttpRequest();
-            xhr.open('GET', MBED_URL + path, true);
-            xhr.send();
+            global.mbed.passthrough(req);
             res.setHeader('Access-Control-Allow-Origin', '*');
             res.write('ok');
             oncomplete();
@@ -66,7 +70,30 @@
         console.log('window onload');
 
         screen.mozLockOrientation('landscape-primary');
+        initializeMbed();
         initializeServer();
         initializeFace();
     });
+
+    // escape by touching
+    window.addEventListener('touchstart', function () {
+        global.face.setEscaping(true);
+        global.mbed.back();
+    });
+    window.addEventListener('touchend', function () {
+        global.face.setEscaping(false);
+        global.mbed.stop();
+    });
+
+    // escape by proximity
+    window.addEventListener('userproximity', function (evt) {
+        if (evt.near) {
+            global.face.setEscaping(true);
+            global.mbed.back();
+        } else {
+            global.face.setEscaping(false);
+            global.mbed.stop();
+        }
+    });
+
 }(this));

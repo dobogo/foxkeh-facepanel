@@ -19,23 +19,6 @@
         ];
         this.setIndex(0);
 
-        // by touching
-        window.addEventListener('touchstart', function () {
-            this_.setEscaping(true);
-        });
-        window.addEventListener('touchend', function () {
-            this_.setEscaping(false);
-        });
-
-        // by proximity
-        window.addEventListener('userproximity', function (evt) {
-            if (evt.near) {
-                this_.setEscaping(true);
-            } else {
-                this_.setEscaping(false);
-            }
-        });
-
         // auto wink
         setInterval(function () {
             this_.wink();
