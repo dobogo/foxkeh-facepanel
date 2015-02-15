@@ -11,6 +11,7 @@ var SERVER_PORT  = 3000;
 var API_BASE_URL  = "http://"+SERVER_IP+":"+SERVER_PORT+"/api/";
 
 var FOXKEH_IS_FRIEND = true;
+var FOXKEH_TAIL_SWINGING = false;
 
 var MAX_SPEED = 255;
 // 静止状態になるコントローラーの傾き基準位置 (beta: 横, gamma: 縦)
@@ -165,6 +166,18 @@ portInput.addEventListener("change", function(event) {
   debugMessage("SERVER_PORT changed to: "+portInput.value);
   SERVER_PORT = portInput.value;
   API_BASE_URL  = "http://"+SERVER_IP+":"+SERVER_PORT+"/api/";
+},false);
+
+var swingTailButton = document.getElementById("swing-tail-button");
+swingTailButton.addEventListener("click", function(event) {
+  if (FOXKEH_TAIL_SWINGING) {
+    sendRequest(API_BASE_URL+"tail/swing/end");
+    swingTailButton.innerHTML = "しっぽふりふり！";
+  } else {
+    sendRequest(API_BASE_URL+"tail/swing/start");
+    swingTailButton.innerHTML = "しっぽ止めて！";
+  }
+  FOXKEH_TAIL_SWINGING = !FOXKEH_TAIL_SWINGING;
 },false);
 
 var winkButton = document.getElementById("wink-button");
