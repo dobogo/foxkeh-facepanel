@@ -13,7 +13,9 @@
         this.index = 0;
         this.availableTypes = [
             'normal',
-            'closed'
+            'closed',
+            'cry',
+            'relax'
         ];
         this.setIndex(0);
 
