@@ -13,13 +13,13 @@
         this.index = 0;
         this.availableTypes = [
             'normal',
-            'close'
+            'closed'
         ];
         this.setIndex(0);
 
         // by touching
         window.addEventListener('touchstart', function () {
-            this_.setType('close');
+            this_.setType('closed');
         });
         window.addEventListener('touchend', function () {
             this_.setType('normal');
@@ -28,7 +28,7 @@
         // by proximity
         window.addEventListener('userproximity', function (evt) {
             if (evt.near) {
-                this_.setType('close');
+                this_.setType('closed');
             } else {
                 this_.setType('normal');
             }
@@ -85,14 +85,14 @@
             };
         }
 
-        this.setType('close');
+        this.setType('closed');
         waitAsync(50)()
             .then(function () {
                 this_.setType('normal');
             })
             .then(waitAsync(50))
             .then(function () {
-                this_.setType('close');
+                this_.setType('closed');
             })
             .then(waitAsync(50))
             .then(function () {
