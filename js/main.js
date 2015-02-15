@@ -25,17 +25,13 @@
             } catch (e) {
                 console.error(e);
             }
-            res._headers = {
-                'Access-Control-Allow-Origin' : '*'
-            };
+            res.setHeader('Access-Control-Allow-Origin', '*');
             oncomplete();
         });
 
         // set face related things
         server.addEventListener('faceRequested', function (req, res, oncomplete) {
-            res._headers = {
-                'Access-Control-Allow-Origin' : '*'
-            };
+            res.setHeader('Access-Control-Allow-Origin', '*');
             oncomplete();
         });
 
