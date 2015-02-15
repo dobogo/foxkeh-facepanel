@@ -206,3 +206,21 @@ friendButton.addEventListener("click", function(event) {
   friendButton.innerHTML = FOXKEH_IS_FRIEND ?
     "さよならフォクすけ..." : "フォクすけあそぼ！";
 },false);
+
+
+function init() {
+  if (screen && screen.mozLockOrientation) {
+    screen.mozLockOrientation("landscape-secondary");
+  }
+  
+  var ipInput = document.getElementById("ip-input");
+  if (!/\d+\.\d+\.\d+\.\d+/.test(SERVER_IP)) {
+    SERVER_IP = "127.0.0.1";
+  }
+  ipInput.value = SERVER_IP;
+  var portInput = document.getElementById("port-input");
+  portInput.value = SERVER_PORT;
+}
+document.addEventListener("DOMContentLoaded", function(event) {
+  init();
+});
