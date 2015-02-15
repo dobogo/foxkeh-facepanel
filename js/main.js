@@ -20,11 +20,7 @@
             var path = req.path + '?' + req.queryString;
             var xhr = new XMLHttpRequest();
             xhr.open('GET', MBED_URL + path, true);
-            try {
-                xhr.send();
-            } catch (e) {
-                console.error(e);
-            }
+            xhr.send();
             res.setHeader('Access-Control-Allow-Origin', '*');
             oncomplete();
         });
@@ -47,8 +43,12 @@
             oncomplete();
         });
 
-        if (server.start()) {
+        try {
+            server.start();
             console.log('Started server on port ' + server.getPort());
+        } catch (e) {
+            console.error('Error: could not start server');
+            console.error(e);
         }
     }
 
@@ -56,6 +56,10 @@
         var face = new Face(document.getElementById('face'));
         global.face = face;
     }
+
+    window.addEventListener('error', function (evt) {
+        console.error(evt.error);
+    });
 
     window.addEventListener('load', function () {
         console.log('window onload');

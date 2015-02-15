@@ -54,16 +54,9 @@
 
     /**
      * Starts listening.
-     * @return {boolean} true if succeeded, otherwise false.
      */
     Server.prototype.start = function () {
-        try {
-            this._httpServer.start(this._port);
-        } catch (e) {
-            console.error(e);
-            return false;
-        }
-        return true;
+        this._httpServer.start(this._port);
     };
 
     global.Server = Server;
