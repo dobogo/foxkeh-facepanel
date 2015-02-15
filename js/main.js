@@ -17,7 +17,10 @@
 
         // set mbed related things
         server.addEventListener('mbedRequested', function (req, res, oncomplete) {
-            var path = req.path + '?' + req.queryString;
+            var path = req.path;
+            if(req.queryString){
+              path = path + '?' + req.queryString;
+            }
             var xhr = new XMLHttpRequest();
             xhr.open('GET', MBED_URL + path, true);
             xhr.send();
