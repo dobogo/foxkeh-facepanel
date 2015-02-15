@@ -25,17 +25,25 @@
             } catch (e) {
                 console.error(e);
             }
-            res._headers = {
-                'Access-Control-Allow-Origin' : '*'
-            };
+            res.setHeader('Access-Control-Allow-Origin', '*');
             oncomplete();
         });
 
         // set face related things
-        server.addEventListener('faceRequested', function (req, res, oncomplete) {
-            res._headers = {
-                'Access-Control-Allow-Origin' : '*'
-            };
+        server.addEventListener('faceStateRequested', function (req, res, oncomplete) {
+            var state = req.queryString.match(/state=(.*)/)[1];
+            try {
+                global.face.setType(state);
+                res.write('ok');
+            } catch (e) {
+                res.write('Error: No such state: ' + state);
+            }
+            res.setHeader('Access-Control-Allow-Origin', '*');
+            oncomplete();
+        });
+        server.addEventListener('faceWinkRequested', function (req, res, oncomplete) {
+            global.face.wink();
+            res.write('ok');
             oncomplete();
         });
 
