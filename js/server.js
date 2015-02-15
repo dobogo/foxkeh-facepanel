@@ -12,6 +12,7 @@
             res.write('ok');
             oncomplete();
         });
+        this._httpServer.get('/', './apps');
     }
 
     /**
