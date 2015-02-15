@@ -21,18 +21,18 @@
 
         // by touching
         window.addEventListener('touchstart', function () {
-            this_.setType('closed');
+            this_.setEscaping(true);
         });
         window.addEventListener('touchend', function () {
-            this_.setType('normal');
+            this_.setEscaping(false);
         });
 
         // by proximity
         window.addEventListener('userproximity', function (evt) {
             if (evt.near) {
-                this_.setType('closed');
+                this_.setEscaping(true);
             } else {
-                this_.setType('normal');
+                this_.setEscaping(false);
             }
         });
 
@@ -48,7 +48,11 @@
 
     Face.prototype.setIndex = function (index) {
         this.index = index;
-        this.element.className = this.availableTypes[index];
+        if (this._escaping) {
+            this.element.className = this.availableTypes[1];
+        } else {
+            this.element.className = this.availableTypes[index];
+        }
     };
 
     Face.prototype.next = function () {
@@ -100,6 +104,11 @@
             .then(function () {
                 this_.setType('normal');
             });
+    };
+
+    Face.prototype.setEscaping = function (escaping) {
+        this._escaping = escaping;
+        this.setIndex(this.index);
     };
 
     global.Face = Face;
