@@ -6,7 +6,7 @@
     var Server = global.Server;
     var Face = global.Face;
 
-    const MBED_URL = 'http://127.0.0.1:5000';
+    const MBED_URL = 'http://192.168.100.44';
     const PORT = 3000;
 
     function initializeServer() {
