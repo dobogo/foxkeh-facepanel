@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "name": "フォクすけコントローラ",
+  "launch_path": "/index.html",
+  "description": "フォクすけロボのコントローラアプリです。フォクすけと楽しくおでかけしよう！",
+  "icons": {
+    "128": "/images/icon128.png",
+    "512": "/images/icon512.png"
+  },
+  "developer": {
+    "name": "ぴたごらすごろくチーム",
+    "url": "https://etherpad.mozilla.org/pythagorasugoroku"
+  },
+  "installs_allowed_from": [
+    "*"
+  ],
+  "fullscreen": "true",
+  "default_locale": "en",
+  "orientation": "landscape-secondary",
+  "type": "web",
+  "permissions": {
+    "systemXHR": {
+      "description": "send request to Foxkeh Robot"
+    },
+    "geolocation": {
+      "description": "get current location"
+    }
+  }
+}

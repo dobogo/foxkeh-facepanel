@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <title>フォクすけコントローラ</title>
+    <base target="_blank">
+</head>
+
+<body>
+<section id="main">
+  <section id="face-request">
+    <button id="wink-button">ウィンクして！</button>
+  </section>
+
+  <section id="eye-request">
+    <button id="eye-normal-button" data-state="normal">目を開いて！</button>
+    <button id="eye-closed-button" data-state="closed">目を閉じて！</button><br>
+    <button id="eye-cry-button" data-state="cry">泣いて！</button>
+    <button id="eye-relax-button" data-state="relax">リラックス！</button>
+  </section>
+
+  <section id="other-control">
+    <button id="friend-button">さよならフォクすけ...</button><br>
+    フォクすけの IP: <input id="ip-input" value="192.168.100.104"><br>
+    フォクすけの PORT: <input id="port-input" value="3000"><br>
+  </section>
+</section>
+<div id="debug-message"></div>
+<div id="request-placeholder"></div>
+
+<script type="text/javascript" src="js/base.js"></script>
+</body>
+</html>
