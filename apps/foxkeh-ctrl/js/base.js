@@ -172,10 +172,10 @@ var swingTailButton = document.getElementById("swing-tail-button");
 swingTailButton.addEventListener("click", function(event) {
   if (FOXKEH_TAIL_SWINGING) {
     sendRequest(API_BASE_URL+"tail/swing/end");
-    swingTailButton.innerHTML = "しっぽふりふり！";
+    swingTailButton.innerHTML = "<img src='images/swing-tail.png' alt='しっぽ'>";
   } else {
     sendRequest(API_BASE_URL+"tail/swing/start");
-    swingTailButton.innerHTML = "しっぽ止めて！";
+    swingTailButton.innerHTML = "<img src='images/swing-tail2.png' alt='しっぽ'>";
   }
   FOXKEH_TAIL_SWINGING = !FOXKEH_TAIL_SWINGING;
 },false);
@@ -204,7 +204,7 @@ var friendButton = document.getElementById("friend-button");
 friendButton.addEventListener("click", function(event) {
   FOXKEH_IS_FRIEND = !FOXKEH_IS_FRIEND;
   friendButton.innerHTML = FOXKEH_IS_FRIEND ?
-    "さよならフォクすけ..." : "フォクすけあそぼ！";
+    "ばいば〜い！" : "あそぼ！";
 },false);
 
 
