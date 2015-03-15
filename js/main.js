@@ -9,6 +9,12 @@
     const MBED_URL = 'http://192.168.100.44';
     const PORT = 3000;
 
+    function initializeGirlFriend() {
+        var girlfriend = new GirlFiend();
+        global.girlfriend = girlfriend;
+        girlfriend.sing();
+    }
+
     function initializeServer() {
         var server = new Server();
         global.server = server;
@@ -67,6 +73,7 @@
 
         screen.mozLockOrientation('landscape-primary');
         initializeServer();
+        initializeGirlFriend();
         initializeFace();
     });
 }(this));

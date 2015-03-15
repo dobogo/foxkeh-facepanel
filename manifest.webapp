@@ -12,6 +12,9 @@
     "fullscreen": true,
     "type": "privileged",
     "permissions": {
+        "systemXHR": {
+            "description": "MBED など任意デバイスへのアクセス"
+        },
         "tcp-socket": {}
     }
 }
