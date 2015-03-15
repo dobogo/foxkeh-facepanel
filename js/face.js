@@ -15,6 +15,7 @@
             'normal',
             'closed',
             'cry',
+            'heart',
             'relax'
         ];
         this.setIndex(0);

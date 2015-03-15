@@ -36,6 +36,19 @@
             oncomplete();
         });
 
+        // set girlfriend related things
+        server.addEventListener('girlfriendFeelingRequested', function (req, res, oncomplete) {
+            var feeling = req.queryString.match(/feeling=(.*)/)[1];
+            try {
+                global.girlfriend.setFeeling(feeling);
+                res.write('girlfriend feeling changed: ' + feeling);
+            } catch (e) {
+                res.write('Error: cannot change girlfriend feeling: ' + feeling);
+            }
+            res.setHeader('Access-Control-Allow-Origin', '*');
+            oncomplete();
+        });
+
         // set face related things
         server.addEventListener('faceStateRequested', function (req, res, oncomplete) {
             var state = req.queryString.match(/state=(.*)/)[1];

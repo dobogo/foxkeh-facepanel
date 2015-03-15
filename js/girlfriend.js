@@ -14,8 +14,10 @@ function GirlFiend() {
   this.initialOrientation = [0,0,0];
   this.orientation = [0,0,0];
 
-  // TOCOS のデータで初期化する
-  this.checkOrientation();
+  this.checkOrientation(function() {
+    // TOCOS のデータで初期化する
+    this.initialOrientation = [0,0,0];
+  });
 
   // TODO: 定期的に checkFeeling して感情判断し続ける
 
@@ -28,10 +30,10 @@ GirlFiend.prototype.setFeeling = function (feeling) {
   // TODO: availableFeelings に入ってるかチェックすべき
   this.feeling = feeling;
   if (feeling == "love") {
-    this.song("love.m4a");
+    this.sing("love.m4a");
   }
   else {
-    this.song("normal.m4a");
+    this.sing("normal.m4a");
   }
 }
 

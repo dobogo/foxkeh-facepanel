@@ -34,6 +34,9 @@
         case 'faceWinkRequested':
             this._httpServer.get('/api/face/eye/wink', handler);
             break;
+        case 'girlfriendFeelingRequested':
+            this._httpServer.get('/api/girlfriend', handler);
+            break;
         }
     };
 

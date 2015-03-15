@@ -193,10 +193,12 @@ function eyeController(event) {
 var eyeNormalButton = document.getElementById("eye-normal-button");
 var eyeClosedButton = document.getElementById("eye-closed-button");
 var eyeCryButton = document.getElementById("eye-cry-button");
+var eyeHeartButton = document.getElementById("eye-heart-button");
 var eyeRelaxButton = document.getElementById("eye-relax-button");
 eyeNormalButton.addEventListener("click", eyeController, false);
 eyeClosedButton.addEventListener("click", eyeController, false);
 eyeCryButton.addEventListener("click", eyeController, false);
+eyeHeartButton.addEventListener("click", eyeController, false);
 eyeRelaxButton.addEventListener("click", eyeController, false);
 
 
@@ -212,7 +214,7 @@ function init() {
   if (screen && screen.mozLockOrientation) {
     screen.mozLockOrientation("landscape-secondary");
   }
-  
+
   var ipInput = document.getElementById("ip-input");
   if (!/\d+\.\d+\.\d+\.\d+/.test(SERVER_IP)) {
     SERVER_IP = "127.0.0.1";
