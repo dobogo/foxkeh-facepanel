@@ -1,41 +1,45 @@
-* { font-family: 'SourceHanSans-Normal'; }
+* {
+  font-family: 'SourceHanSans-Normal'; }
+
 @font-face {
   font-family: 'SourceHanSans-Normal';
-  src: url('../fonts/SourceHanSansJP-Normal.woff') format('woff');
+  src: url("../fonts/SourceHanSansJP-Normal.woff") format("woff");
   font-weight: normal;
-  font-style: normal;
-}
-
+  font-style: normal; }
 html, body {
-  padding: 0;
-  margin: 0;
-  font-size: 20px;
-  background: #fff;
-}
+  padding-top: 0;
+  margin-top: 0; }
 
-h2 {
-  font-size: 2rem;
-}
-h3 {
-  font-size: 1.8rem;
-}
-h4 {
-  font-size: 1.5rem;
-}
+nav {
+  background: linear-gradient(#DB812D, #B84D45) !important;
+  border-color: #B84D45 !important;
+  box-shadow: 0 3px 3px #333333; }
+  nav .navbar-brand {
+    color: #ffffff !important; }
 
-#main {
-  padding: 1rem;
-}
+#other-control #friend-button {
+  color: #ffffff;
+  float: right;
+  margin-right: 10px;
+  text-decoration: none;
+  line-height: 50px; }
 
-button, input {
-  font-size: 1.0rem;
-  margin: 0.2rem;
-}
-input {
-  width: 10em;
-}
+.container {
+  margin: 5px; }
+  .container .row .col-xs-3 i {
+    color: #5F9B0A;
+    font-size: 100px;
+    margin: 10px 0;
+    text-align: center; }
+  .container .row .col-xs-3 img {
+    width: 100%;
+    height: 100%;
+    text-align: center; }
 
-#request-placeholder img {
-  width: 0px;
-  height: 0px;
-}
+.modal li {
+  list-style: none; }
+.modal .btn {
+  background-color: #00AACC;
+  color: #FFFFFF; }
+
+/*# sourceMappingURL=main.css.map */
